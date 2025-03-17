@@ -162,6 +162,14 @@
     </footer>
 
     <script>
+        fetch("https://my-project-backend-psi.vercel.app/api/server")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data); // Log response to console
+    document.getElementById("output").innerText = data.message; // Display response
+  })
+  .catch(error => console.error("Error:", error));
+
 // Initialize Leaflet map
 var map = L.map('map').setView([12.879080, 79.122219], 13);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
